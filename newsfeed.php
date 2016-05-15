@@ -55,12 +55,14 @@
 				// 6 -> start
 				// 7 -> end ?>
 				
+			<div class="container">
 				<div class="panel-group">
     				<div class="panel panel-info">
 						<div class="panel-heading">
-							<h4><?=$info[1]?></h4>	
+							<h4><?=$info[0]?></h4>	
 						</div>
 						<div class="panel-body">
+							<p>Address: <?=$info[1]?></p>
 							<p>Phone: <?=$info[2]?></p>
 							<p>Food Item: <?=$info[3]?></p>
 							<p>Original Price: $<?=$info[4]?></p>
@@ -68,7 +70,7 @@
 							<p>Hours: <?=$info[6]?> - <?=$info[7]?></p>
 						</div>
     					</div>
-
+			</div>
 			<?php }
 			?>
 			
