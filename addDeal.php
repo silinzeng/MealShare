@@ -7,5 +7,5 @@
 		file_put_contents("$data[0].txt", $data[$i] . "\n", FILE_APPEND);
 	}
 
-	header("location: FeedPage.php");
+	header("location: newsfeed.php");
 ?>
