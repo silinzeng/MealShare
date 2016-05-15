@@ -4,9 +4,31 @@
 <html>
 	<head>
 		<title>News Feed</title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	</head>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="MealShare.html">Meal Time</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</nav>
 	<body>
-		<h1>New Deals</h1>
+		<h1 id="dealsTitle">New Deals</h1>
 		<ol>
 			<?php
 			$deals = glob("*.txt");
@@ -20,7 +42,7 @@
 				// 4 -> discounted price 
 				// 6 -> start
 				// 7 -> end ?>
-				<li><?=$info[0]?>
+				<li class="food"><?=$info[0]?>
 						<p><?=$info[1]?></p>
 						<p>Phone: <?=$info[2]?></p>
 						<p>Food Item: <?=$info[3]?></p>
