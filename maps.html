@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>New Post Form</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+
+    <!-- Custom styles for this template -->
+    <link href="forms2.css" rel="stylesheet">
+
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    
+    <script>
+    	var map;
+		var marker;
+
+
+		function initialize() {
+
+		var mapOptions = {
+			center: new google.maps.LatLng(40.680898,-8.684059),
+			zoom: 11,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+
+		map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+
+		function searchAddress() {
+
+			var addressInput = document.getElementById('address-input').value;
+
+			var geocoder = new google.maps.Geocoder();
+
+			geocoder.geocode({address: addressInput}, function(results, status) {
+
+				if (status == google.maps.GeocoderStatus.OK) {
+
+      			var myResult = results[0].geometry.location;
+
+      			createMarker(myResult);
+
+      			map.setCenter(myResult);
+
+      			map.setZoom(17);
+			}
+		});
+
+	}
+
+	function createMarker(latlng) {
+
+  		if(marker != undefined && marker != ''){
+    		marker.setMap(null);
+    		marker = '';
+  		}
+
+  		marker = new google.maps.Marker({
+    	map: map,
+    	position: latlng
+  	});
+	}
+</script>
+    
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="MealShare.html">Meal Time</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+              <ul class="nav navbar-nav">
+                <li><a href="about.html">About</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+    <div class="container">
+      <div class="header clearfix">
+                
+      </div>
+
+      <div class="jumbotron">
+        <h2><center>Got extra food? Let us help you distribute it!</center></h2>
+        
+      </div>
+      
+	<div>
+	<!-- id="address-input" is the input that the map will use to plot the point -->
+      Enter an address <input type="text" id="address-input">
+      <button onclick="searchAddress();">Search</button>
+    </div>   
+    
+    
+    <div id="map-canvas"> </div>
+
+
+
+<br>
+
+      <footer class="footer">
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+

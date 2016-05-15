@@ -7004,6 +7004,14 @@ a.list-group-item-danger.active:focus {
   border: none;
   border-radius: 0;
 }
+#map-canvas {
+  margin: 0;
+  padding: 0;
+  height: 400px;
+  max-width: none;
+}
+#map-canvas img {
+  max-width: none !important;
 .popover-title {
   border: none;
 }
