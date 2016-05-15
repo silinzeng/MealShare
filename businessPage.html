@@ -12,65 +12,57 @@
     <title>New Post Form</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
     <link href="forms2.css" rel="stylesheet">
 
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="MealShare.html">Meal Time</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-              <ul class="nav navbar-nav">
-                <li><a href="about.html">About</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-              </ul>
-            </div>
-          </div>
-        </nav>
 
     <div class="container">
       <div class="header clearfix">
-                
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Meal Time</h3>
       </div>
 
       <div class="jumbotron">
-        <h2><center>Got extra food? Let us help you distribute it!</center></h2>
+        <h2>Have some leftover food?</h2>
         
       </div>
       
       
-<form>
+<form action="addDeal.php" method="post">
 
   <h2>Vendor Information</h2>
   <div class="form-group">
     <label for="restaurantName">Restaurant Name</label>
-    <input type="text" class="form-control" id="restaurantName" placeholder="Name">
+    <input type="text" class="form-control" id="restaurantName" placeholder="Name" name="name">
   </div>
   
   <div class="form-group">
     <label for="address">Address</label>
-    <input type="text" class="form-control" id="address" placeholder="Address">
+    <input type="text" class="form-control" id="address" placeholder="Address" name="address">
   </div>
   
   <div class="form-group">
     <label for="phone">Phone Number</label>
-    <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" name="phone">
   </div>
   
   <br><br>
@@ -78,7 +70,7 @@
   <h2>Meal Information</h2>
   <div class="form-group">
     <label for="mealName">Meal Name</label>
-    <input type="text" class="form-control" id="mealName" placeholder="Meal Name">
+    <input type="text" class="form-control" id="mealName" placeholder="Meal Name" name="food">
   </div>
 
 
@@ -87,7 +79,7 @@
     <label for="originalPrice">Original Price</label>
     <div class="input-group">
       <div class="input-group-addon">$</div>
-      <input type="text" class="form-control" id="originalPrice" placeholder="Amount">
+      <input type="text" class="form-control" id="originalPrice" placeholder="Amount" name="regPrice">
     </div>
   </div>
   
@@ -95,27 +87,27 @@
     <label for="discountedPrice">Discounted Price</label>
     <div class="input-group">
       <div class="input-group-addon">$</div>
-      <input type="text" class="form-control" id="discountedPrice" placeholder="Amount">
+      <input type="text" class="form-control" id="discountedPrice" placeholder="Amount" name="newPrice">
     </div>
   </div>
   </div>
   <br>
     <h4>Availability</h4>
     <div class="form-inline">
-  		<div class="form-group">
-    		<label for="startTime">Start Time</label>
-    		<div class="input-group">
-      		<input type="time" class="form-control" id="startTime" placeholder="Start Time">
-    		</div>
-  		</div>
+      <div class="form-group">
+        <label for="startTime">Start Time</label>
+        <div class="input-group">
+          <input type="time" class="form-control" id="startTime" placeholder="Start Time" name="start">
+        </div>
+      </div>
   
-    	<div class="form-group">
-    		<label for="endTime">End Time</label>
-    		<div class="input-group">
-      		<input type="time" class="form-control" id="endTime" placeholder="End Time">
-    		</div>
-  		</div>
-  	</div>
+      <div class="form-group">
+        <label for="endTime">End Time</label>
+        <div class="input-group">
+          <input type="time" class="form-control" id="endTime" placeholder="End Time" name="end"> 
+        </div>
+      </div>
+    </div>
 <br>
     
     
@@ -126,7 +118,7 @@
   </div>
 
 <br><br>
-  <a href="output.html"><button type="submit" class="btn btn-success btn-lg">Submit</button></a>
+  <button type="submit" class="btn btn-success btn-lg">Submit</button>
 </form>
 
 
@@ -143,3 +135,6 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
+Status API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help
