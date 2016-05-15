@@ -40,6 +40,7 @@
 	<div class="container">
 		<ol>
 		
+</div>
 		
 			<?php
 			$deals = glob("*.txt");
@@ -54,16 +55,19 @@
 				// 6 -> start
 				// 7 -> end ?>
 				
-				<li class="food"><?=$info[0]?>
-						<p><?=$info[1]?></p>
-						<p>Phone: <?=$info[2]?></p>
-						<p>Food Item: <?=$info[3]?></p>
-						<p>Original Price: $<?=$info[4]?></p>
-						<p>Discount Price: $<?=$info[5]?></p>
-						<p>Hours: <?=$info[6]?> - <?=$info[7]?></p>
-				</li>
-				
-				
+				<div class="panel-group">
+    				<div class="panel panel-info">
+						<div class="panel-heading">
+							<h4><?=$info[1]?></h4>	
+						</div>
+						<div class="panel-body">
+							<p>Phone: <?=$info[2]?></p>
+							<p>Food Item: <?=$info[3]?></p>
+							<p>Original Price: $<?=$info[4]?></p>
+							<p>Discount Price: $<?=$info[5]?></p>
+							<p>Hours: <?=$info[6]?> - <?=$info[7]?></p>
+						</div>
+    					</div>
 
 			<?php }
 			?>
