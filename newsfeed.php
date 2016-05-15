@@ -28,8 +28,19 @@
   </div>
 </nav>
 	<body>
-		<h1 id="dealsTitle">New Deals</h1>
+	
+		<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h1>Food Feed</h1>
+			</div>
+		</div>
+		</div>
+<br>
+	<div class="container">
 		<ol>
+		
+		
 			<?php
 			$deals = glob("*.txt");
 			foreach ($deals as $deal) {
@@ -42,6 +53,7 @@
 				// 4 -> discounted price 
 				// 6 -> start
 				// 7 -> end ?>
+				
 				<li class="food"><?=$info[0]?>
 						<p><?=$info[1]?></p>
 						<p>Phone: <?=$info[2]?></p>
@@ -50,9 +62,15 @@
 						<p>Discount Price: $<?=$info[5]?></p>
 						<p>Hours: <?=$info[6]?> - <?=$info[7]?></p>
 				</li>
+				
+				
 
 			<?php }
 			?>
+			
+			
 		</ol>
+		
+		</div>
 	</body>
 </html>
